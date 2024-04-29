@@ -1,0 +1,40 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#container {
+    display: flex;
+    height: 100%;
+}
+
+#sidebar {
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cesiumContainer {
+    flex: 4;
+    background-color: #e5e5e5; /* Couleur de fond avant le chargement de Cesium */
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+
+
+#zone-graphique {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: calc(100vh / 6);
+    background-color: white; /* Couleur de fond du graphique */
+    margin-left: calc(100vw / 6); /* Marge gauche pour éviter de recouvrir la partie blanche à gauche */
+}
