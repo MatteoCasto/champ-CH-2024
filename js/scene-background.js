@@ -10,6 +10,7 @@ async function initImageryOnTerrain(url, opacity){
     let imagery = await new Cesium.UrlTemplateImageryProvider({
         url: url,
         subdomains: "9999",
+        maximumLevel: 18,
         tilingScheme: new Cesium.GeographicTilingScheme({
             numberOfLevelZeroTilesX: 2,
             numberOfLevelZeroTilesY: 1,

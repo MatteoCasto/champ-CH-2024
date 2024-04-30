@@ -1,7 +1,7 @@
 // My access token at: https://ion.cesium.com/tokens
 Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIwNGY0Mjk4Ny1kYWMxLTQwZjMtOWM5YS0zZDY0Y2UyYTI5MTciLCJpZCI6MTk3MjAyLCJpYXQiOjE3MDg2MDY5MzN9.0zahHvP9QC7E_C0zRuIDDe_QTPEuUafXfgvRREVXAis";
 
-const viewer = new Cesium.Viewer('cesiumContainer', {
+const viewer = new Cesium.Viewer('cesium-container', {
 
     // Terrain Swissgeol 
     terrainProvider: new Cesium.CesiumTerrainProvider({
@@ -32,7 +32,7 @@ viewer.scene.globe.terrainExaggeration = 1.0;
 // load WMTS
 initImageryOnTerrain(IMAGERY_URLS['swissTLM3D'], 1.0);
 initImageryOnTerrain(IMAGERY_URLS['swissALTI3Drelief'], 0.4);
-// initImageryOnTerrain(IMAGERY_URLS['swissIMAGE'], 0.4);
+initImageryOnTerrain(IMAGERY_URLS['swissIMAGE'], 1.0);
 
 
 // swissBUILDINGS3D

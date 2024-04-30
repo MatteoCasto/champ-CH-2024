@@ -5,8 +5,10 @@ const IMAGERY_URLS = {'swissIMAGE':'https://wmts{s}.geo.admin.ch/1.0.0/ch.swisst
 }
 
 // path to the .gpx file in the "assets" folder
-const GPX_FILE_XCO = '../assets/track_XCO.gpx';
+const GPX_FILE_XCO = '../assets/track_XCO_1.gpx';
 
+// path to images for titles on the left
+const MONTFORT_FILE = '../assets/zone_refuge.png'
 
 
 

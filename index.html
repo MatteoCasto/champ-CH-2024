@@ -6,14 +6,17 @@
     <script src="https://cesium.com/downloads/cesiumjs/releases/1.104/Build/Cesium/Cesium.js"></script>
     <link href="https://cesium.com/downloads/cesiumjs/releases/1.104/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div id="container">
-        <div id="sidebar">
-            <h1>Menu, "flyto", etc.</h1>
+        <div id="menu-container">
+            <img src="/assets/logo.jpg" width="100%">
         </div>
-        <div id="cesiumContainer"></div>
-        <div id="zone-graphique">Graphique</div>
+        <div id="cesium-container"></div>
+        <div id="profile-container">
+            <canvas id="profile"></canvas>
+        </div>
     </div>
 
     <!-- init cesium -->
@@ -22,7 +25,8 @@
     <script src="/js/init-cesium.js"></script>
     <script src="/js/view-manager.js"></script>
     <script src="/js/loading-track.js"></script>
-    
+    <script src="/js/profile.js"></script>
+
 
 </body>
 </html>

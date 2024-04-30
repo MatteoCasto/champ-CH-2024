@@ -3,38 +3,48 @@ body, html {
     margin: 0;
     font-family: Arial, sans-serif;
 }
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
 
 #container {
     display: flex;
     height: 100%;
+    position: relative; /* Ajout d'une position relative pour pouvoir positionner #profile-container par rapport à #container */
 }
 
-#sidebar {
+#menu-container {
     flex: 1;
-    background-color: white;
+    background-color: hsl(0, 0%, 100%);
     padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#cesiumContainer {
+#cesium-container {
     flex: 4;
     background-color: #e5e5e5; /* Couleur de fond avant le chargement de Cesium */
 }
 
-h1 {
-    margin: 0;
-    font-size: 24px;
-}
 
-
-
-#zone-graphique {
+#profile-container {
     position: absolute;
     bottom: 0;
-    width: 100%;
-    height: calc(100vh / 6);
-    background-color: white; /* Couleur de fond du graphique */
-    margin-left: calc(100vw / 6); /* Marge gauche pour éviter de recouvrir la partie blanche à gauche */
+    width: calc(80% - 52px); /* Calcul de la largeur pour correspondre à 80% de la largeur totale moins le padding de #cesiumContainer */
+    height: calc(100vh / 5);
+    background-color: rgb(255, 255, 255); /* Couleur de fond du graphique */
+    padding-left:20px;
+    padding-top:20px;
+    padding-bottom:20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    left: calc(20% + 32px); /* Positionné juste à droite du #sidebar */
+}
+
+canvas {
+    max-width: 100%; /* Ensure canvas doesn't exceed parent container width */
+    max-height: 100%; /* Ensure canvas doesn't exceed parent container height */
 }
