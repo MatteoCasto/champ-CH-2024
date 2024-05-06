@@ -5,25 +5,58 @@
     <link rel="stylesheet" href="css/style.css">  
     <script src="https://cesium.com/downloads/cesiumjs/releases/1.104/Build/Cesium/Cesium.js"></script>
     <link href="https://cesium.com/downloads/cesiumjs/releases/1.104/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div id="container">
         <div id="menu-container">
-            <img src="/assets/logo.jpg" width="100%">
+            <div class="menu-item">
+                <img src="/assets/logo.jpg" width="50%">
+            </div>
+            <button class="menu-item btn btn-outline-warning my-2">
+                <img src="/assets/zone_refuge.png" width="50%">
+                <h4 class="ml-2">Zone refuge</h4>
+            </button>
+            <button class="menu-item btn btn-outline-warning my-2">
+                <img src="/assets/zone_refuge.png" width="50%">
+                <h4 class="ml-2">Zone refuge</h4>
+            </button>
+            <button class="menu-item btn btn-outline-warning my-2">
+                <img src="/assets/zone_refuge.png" width="50%">
+                <h4 class="ml-2">Zone refuge</h4>
+            </button>
+            <button class="menu-item btn btn-outline-warning my-2">
+                <img src="/assets/zone_refuge.png" width="50%">
+                <h4 class="ml-2">Zone refuge</h4>
+            </button>
         </div>
+
+
         <div id="cesium-container"></div>
         <div id="profile-container">
             <canvas id="profile"></canvas>
         </div>
     </div>
 
+
+    <div class="form-check overlay-cesium">
+        <div class="mx-2 my-1">
+            <input class="form-check-input" type="checkbox" id="checkboxAerialImage" onchange="changeAerialVisibility()">
+            <label class="form-check-label" for="checkboxAerialImage">
+            Image aérienne
+            </label>
+        </div>
+    </div>
+
+    
+
+
     <!-- init cesium -->
     <script src="/js/constants.js"></script>
+    <script src="/js/view-manager.js"></script>
     <script src="/js/scene-background.js"></script>
     <script src="/js/init-cesium.js"></script>
-    <script src="/js/view-manager.js"></script>
     <script src="/js/loading-track.js"></script>
     <script src="/js/profile.js"></script>
 
