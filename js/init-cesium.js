@@ -25,7 +25,7 @@ const viewer = new Cesium.Viewer('cesium-container', {
 
 
 // flyto default
-flyTo(6.63873, 46.64067, 1000, -240, -25, 0);
+flyTo(DEFAULT_COORDINATES_AND_ROTATION);
 
 // some other options
 viewer.scene.globe.depthTestAgainstTerrain = true; // IMPORTANT: batiment invisble à travers le terrain
@@ -35,7 +35,6 @@ viewer.scene.globe.terrainExaggeration = 1.0;
 // load WMTS
 initImageryOnTerrain(IMAGERY_URLS['swissTLM3D'], 1.0);
 initImageryOnTerrain(IMAGERY_URLS['swissALTI3Drelief'], 0.4);
-// initImageryOnTerrain(IMAGERY_URLS['swissIMAGE'], 1.0);
 
 
 // swissBUILDINGS3D

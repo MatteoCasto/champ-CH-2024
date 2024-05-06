@@ -11,24 +11,29 @@
 <body>
     <div id="container">
         <div id="menu-container">
-            <div class="menu-item">
-                <img src="/assets/logo.jpg" width="50%">
-            </div>
-            <button class="menu-item btn btn-outline-warning my-2">
+            
+            <a href="https://echallens2024.ch/" class="link-container">
+                <img src="/assets/logo.jpg" class="img-logo mx-auto">
+            </a>
+            <button class="menu-item btn btn-outline-warning my-2" onclick="goToZone(DEFAULT_COORDINATES_AND_ROTATION)">
+                <img src="/assets/elargi.PNG" width="50%">
+                <h4 class="ml-2">Vue globale</h4>
+            </button>
+            <button class="menu-item btn btn-outline-warning my-2" onclick="goToZone(REFUGE_COORDINATES_AND_ROTATION)">
                 <img src="/assets/zone_refuge.png" width="50%">
                 <h4 class="ml-2">Zone refuge</h4>
             </button>
-            <button class="menu-item btn btn-outline-warning my-2">
-                <img src="/assets/zone_refuge.png" width="50%">
-                <h4 class="ml-2">Zone refuge</h4>
+            <button class="menu-item btn btn-outline-warning my-2" onclick="goToZone(FOREST_COORDINATES_AND_ROTATION)">
+                <img src="/assets/zone_foret.PNG" width="50%">
+                <h4 class="ml-2">Zone forêt</h4>
             </button>
-            <button class="menu-item btn btn-outline-warning my-2">
-                <img src="/assets/zone_refuge.png" width="50%">
-                <h4 class="ml-2">Zone refuge</h4>
+            <button class="menu-item btn btn-outline-warning my-2" onclick="goToZone(UPHILL_COORDINATES_AND_ROTATION)">
+                <img src="/assets/zone_montee.PNG" width="50%">
+                <h4 class="ml-2">Montée</h4>
             </button>
-            <button class="menu-item btn btn-outline-warning my-2">
-                <img src="/assets/zone_refuge.png" width="50%">
-                <h4 class="ml-2">Zone refuge</h4>
+            <button class="menu-item btn btn-outline-warning my-2" onclick="goToZone(ARRIVAL_COORDINATES_AND_ROTATION)">
+                <img src="/assets/zone_arrivee.PNG" width="50%">
+                <h4 class="ml-2">Zone d'arrivée</h4>
             </button>
         </div>
 
