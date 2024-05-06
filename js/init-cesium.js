@@ -23,6 +23,8 @@ const viewer = new Cesium.Viewer('cesium-container', {
     imageryProvider : false, 
 });
 
+// current marker for profile localisation
+currentMarkerOnMap = null
 
 // flyto default
 flyTo(DEFAULT_COORDINATES_AND_ROTATION);

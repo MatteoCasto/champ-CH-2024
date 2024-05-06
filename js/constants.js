@@ -7,8 +7,9 @@ const IMAGERY_URLS = {'swissIMAGE':'https://wmts{s}.geo.admin.ch/1.0.0/ch.swisst
 // path to the .gpx file in the "assets" folder
 const GPX_FILE_XCO = '../assets/track_XCO_6.gpx';
 
-// path to images for titles on the left
-const MONTFORT_FILE = '../assets/zone_refuge.png'
+
+// path to CSV of profile
+const CSV_FILE = '../assets/reduced_profile_and_distances.csv'
 
 // coordinates and rotation presets for zones of interests
 const DEFAULT_COORDINATES_AND_ROTATION = {'lon':6.631484, 
@@ -55,9 +56,4 @@ const ARRIVAL_COORDINATES_AND_ROTATION = {'lon':6.643189,
 
 
 
-
-
-
-
-// Longitude: 6.655471, Latitude: 46.632754, Altitude: 797.66, Heading: 301.26, Pitch: -24.44, Roll: 360.00
 
