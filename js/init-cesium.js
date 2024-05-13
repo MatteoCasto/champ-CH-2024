@@ -21,6 +21,8 @@ const viewer = new Cesium.Viewer('cesium-container', {
     baseLayerPicker: false, 
     navigationHelpButton: false, 
     imageryProvider : false, 
+    infoBox: false,
+    selectionIndicator: false 
 });
 
 // current marker for profile localisation
