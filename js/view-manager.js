@@ -19,7 +19,6 @@ function flyTo(coordinatesAndRotation, fast=true){
 };
 
 
-
 function goToZone(coordinatesAndRotation){
 
   // if it's the refuge, activate aerial image
@@ -47,8 +46,6 @@ function goToZone(coordinatesAndRotation){
   flyTo(coordinatesAndRotation, fast=false);
 
 };
-
-
 
 
 function changeAerialVisibility(){
@@ -80,47 +77,13 @@ function desactivateAerial(){
 
 
 
-// Function to add or update a clamped marker on the terrain
-function updateClampedMarker(longitude, latitude) {
-  // Remove the previous entity if it exists
-  if (currentMarkerOnMap) {
-      viewer.entities.remove(currentMarkerOnMap);
-  };
-
-  // Define the URL to the vertical line image
-  let verticalLineIconUrl = '../assets/localisation.png'; // Change this to the path of your image
-
-  // Add a new entity with updated coordinates using a billboard
-  currentMarkerOnMap = viewer.entities.add({
-      position: Cesium.Cartesian3.fromDegrees(longitude, latitude),
-      billboard: {
-          image: verticalLineIconUrl, // URL to the vertical line image
-          verticalOrigin: Cesium.VerticalOrigin.BOTTOM, // Align the bottom of the image with the position
-          heightReference: Cesium.HeightReference.CLAMP_TO_GROUND, // Ensures the billboard clamps to the ground
-          scale: 0.05, // Adjust the scale as needed
-          disableDepthTestDistance: Number.POSITIVE_INFINITY // Ensures visibility against the terrain
-      }
-  });
-
-  // let offset = new Cesium.HeadingPitchRange(
-  //   viewer.camera.heading, // Heading - facing north
-  //   viewer.camera.pitch, // Pitch - looking slightly downwards
-  //   1000  // Range - distance from the target in meters
-  // );
-
-  // // Fly to the entity with the specified offset
-  // viewer.flyTo(currentMarkerOnMap, {
-  //     offset: offset,
-  //     duration: 0.01 // Duration in seconds, adjust as needed for speed of movement
-  // });
- 
-}
 
 
 
 
 
-// FOR DEVELOPMENT ONLY
+
+// FOR DEVELOPMENT PURPOSE ONLY
 function logCameraCoordinates() {
   var camera = viewer.camera;
   var positionCartographic = Cesium.Cartographic.fromCartesian(camera.position);

@@ -7,9 +7,14 @@ const IMAGERY_URLS = {'swissIMAGE':'https://wmts{s}.geo.admin.ch/1.0.0/ch.swisst
 // path to the .gpx file in the "assets" folder
 const GPX_FILE_XCO = '../assets/track_XCO_6.gpx';
 
-
 // path to CSV of profile
 const CSV_FILE = '../assets/reduced_profile_and_distances.csv'
+
+// path to localisation marker (from profile)
+const LOCALISATION_MARKER = '../assets/localisation.png';
+
+// path to start/arrival marker
+const START_MARKER = '../assets/start_icon.png';
 
 // coordinates and rotation presets for zones of interests
 const DEFAULT_COORDINATES_AND_ROTATION = {'lon':6.631484, 

@@ -44,6 +44,9 @@ initImageryOnTerrain(IMAGERY_URLS['swissALTI3Drelief'], 0.4);
 // swissBUILDINGS3D
 displayBuildings();
 
+// "start" marker
+addMarker(6.641234466, 46.63941975666666, START_MARKER, 0.07); // TODO eventually with GLTG of an arch
+
 
 
 
