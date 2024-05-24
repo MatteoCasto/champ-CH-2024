@@ -7,4 +7,4 @@ npm install
 npm start
 ```
 
-La page peut s'ouvrir dans un navgigateur à l'adresse `http://localhost:8080/`
+La page peut ensuite s'ouvrir dans un navgigateur à l'adresse `http://localhost:8080/`
