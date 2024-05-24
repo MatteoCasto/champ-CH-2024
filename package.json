@@ -1,0 +1,14 @@
+{
+  "name": "champ-CH-2024",
+  "version": "1.0.0",
+  "description": "Parcours 3D",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server ./"
+  },
+  "devDependencies": {
+    "http-server": "^0.12.3"
+  },
+  "author": "Matteo Casto",
+  "license": "HES-SO Master"
+}
