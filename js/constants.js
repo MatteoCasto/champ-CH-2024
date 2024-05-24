@@ -9,6 +9,7 @@ const GPX_FILE_XCO = '../assets/track_XCO_6.gpx';
 
 // path to CSV of profile
 const CSV_FILE = '../assets/reduced_profile_and_distances.csv'
+// const CSV_FILE = '../assets/profile_and_distances.csv' // not smoothed
 
 // path to localisation marker (from profile)
 const LOCALISATION_MARKER = '../assets/localisation.png';

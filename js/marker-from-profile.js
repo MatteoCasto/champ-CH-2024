@@ -1,5 +1,3 @@
-
-
 // Function to add or update a clamped marker on the terrain
 function updateClampedMarker(longitude, latitude) {
 
