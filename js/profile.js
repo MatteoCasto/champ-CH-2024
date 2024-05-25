@@ -1,3 +1,12 @@
+/**
+ * Initializes and configures a Chart.js line chart with annotations and hover functionality.
+ * 
+ * This code sets up a Chart.js line chart on a canvas element, configures it with various
+ * options including annotation and hover effects, and loads data from a CSV file to plot
+ * the profile data. When the user hovers over the chart, a marker on the map is updated to
+ * reflect the corresponding coordinates.
+ */
+
 // Get the canvas element
 var ctx = document.getElementById('profile').getContext('2d');
 
@@ -6,7 +15,7 @@ var myChart = new Chart(ctx, {
     type: 'line',
     data: {
         datasets: [{
-            data: [ ],
+            data: [],
             borderColor: 'red',
             borderWidth: 3,
             fill: true,
@@ -39,6 +48,7 @@ var myChart = new Chart(ctx, {
             tooltip: {
                 enabled: false
             },
+            // axes config
             annotation: {
                 annotations: {
                     line1: {
@@ -56,6 +66,8 @@ var myChart = new Chart(ctx, {
                 }
             }
         },
+
+        // Event managment for user's mouse hovering on profile 
         onHover: function(event) {
             const canvasPosition = Chart.helpers.getRelativePosition(event, myChart);
             let mouseX = myChart.scales.x.getValueForPixel(canvasPosition.x);
@@ -70,13 +82,15 @@ var myChart = new Chart(ctx, {
             myChart.options.plugins.annotation.annotations.line1.value = mouseX;
             myChart.update('none');
         }
-        
     }
 });
 
-
-
-// Function to find the closest latitude and longitude for a cumulative distance x in the CSV profile file
+/**
+ * Finds the closest latitude and longitude for a cumulative distance x in the CSV profile file.
+ * 
+ * @param {number} x - The cumulative distance for which to find the closest coordinates.
+ * @returns {object} The record with the smallest distance containing latitude and longitude.
+ */
 function findClosestLatLng(x) {
     const distances = dataPoints.map(point => ({
         lat: point.lat,
@@ -87,15 +101,18 @@ function findClosestLatLng(x) {
     return distances[0]; // Returning the record with the smallest distance
 }
 
-
-// Function to load and parse the CSV
-dataPoints = [];
+/**
+ * Loads and parses a CSV file to extract profile data and updates the chart.
+ * 
+ * @param {object} chart - The Chart.js chart object to update with the loaded data.
+ * @param {string} filePath - The path to the CSV file to be loaded and parsed.
+ */
 async function loadAndParseCSV(chart, filePath) {
     const response = await fetch(filePath);
     const data = await response.text();
     const lines = data.split('\n');
 
-    // Reset data points (gloal variable)
+    // Reset data points (global variable)
     dataPoints = [];
 
     lines.slice(1).forEach(line => {
@@ -116,7 +133,3 @@ async function loadAndParseCSV(chart, filePath) {
 
 // Initialize profile data
 loadAndParseCSV(myChart, CSV_FILE);
-
-
-
-

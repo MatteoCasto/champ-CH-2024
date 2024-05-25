@@ -1,6 +1,16 @@
-// Function to simply add a marker clamped on the ground. Icon's URL is given as input.
+/**
+ * Adds a marker clamped on the ground at the specified longitude and latitude.
+ *
+ * This function creates a billboard entity in Cesium and positions it at the 
+ * specified coordinates. The billboard image URL and scale are customizable.
+ *
+ * @param {number} longitude - The longitude where the marker will be placed.
+ * @param {number} latitude - The latitude where the marker will be placed.
+ * @param {string} iconUrl - The URL of the icon image to be used for the marker.
+ * @param {number} [scale=1] - The scale factor for the icon image. Defaults to 1.
+ * @returns {object} The created marker entity.
+ */
 function addMarker(longitude, latitude, iconUrl, scale=1){
-
     let marker = viewer.entities.add({
         position: Cesium.Cartesian3.fromDegrees(longitude, latitude),
         billboard: {
@@ -13,17 +23,3 @@ function addMarker(longitude, latitude, iconUrl, scale=1){
     });
     return marker;
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-

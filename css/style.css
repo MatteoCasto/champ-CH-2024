@@ -1,129 +1,144 @@
+/**
+ * CSS styles for the webpage layout and elements.
+ * 
+ * This stylesheet defines the layout and styles for a web page with a Cesium viewer, 
+ * menu items, a profile container, and other UI components. It includes styles for 
+ * the body, headings, containers, menu items, images, and canvas elements.
+ */
+
+/* Global styles for body and html */
 body, html {
     height: 100%;
     margin: 0;
     font-family: Arial, sans-serif;
 }
+
+/* Style for h1 headings */
 h1 {
     margin: 0;
     font-size: 24px;
 }
 
+/* Container for the entire layout */
 #container {
     display: flex;
     height: 100%;
-    position: relative; /* Ajout d'une position relative pour pouvoir positionner #profile-container par rapport à #container */
+    position: relative; /* Positioning for profile container */
 }
 
+/* Container for the menu */
 #menu-container {
     flex: 1;
     background-color: hsl(0, 0%, 100%);
     padding: 20px;
     display: flex;
-    align-items: stretch; /* Permet aux éléments de s'étirer verticalement */
-    flex-direction: column; /* Pour empiler les éléments verticalement */
-    overflow-y: auto; /* Ajoute une barre de défilement verticale si nécessaire */
+    align-items: stretch; /* Vertical stretching of items */
+    flex-direction: column; /* Stack items vertically */
+    overflow-y: auto; /* Vertical scrollbar if needed */
 }
 
+/* Menu item styles */
 .menu-item {
-    position: relative; 
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0; /* Éliminez les marges autour des boutons */
-    padding: 0; /* Éliminez les paddings à l'intérieur des boutons */
-    border: none; /* Retirer les bordures pour un affichage plein */
-    overflow: hidden; 
-    width: 100%; /* Assure que le bouton prend la largeur complète du conteneur */
-    height: auto; /* Hauteur automatique selon le contenu */
-    background-color: transparent; /* Fond transparent pour éviter toute couleur de fond indésirable */
+    margin: 0; /* Remove margins */
+    padding: 0; /* Remove padding */
+    border: none; /* Remove borders */
+    overflow: hidden;
+    width: 100%; /* Full width */
+    height: auto; /* Automatic height */
+    background-color: transparent; /* Transparent background */
 }
 
+/* Image styles within menu items */
 .menu-item img {
-    width: 100%; /* S'assure que l'image couvre la largeur du bouton */
-    height: 100%; /* S'assure que l'image couvre la hauteur du bouton */
-    object-fit: cover; /* Garantit que l'image couvre bien tout l'espace disponible, en coupant l'excédent */
-    transform: scale(1.2); /* Agrandit l'image de 10% pour éviter les bordures */
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Transition fluide pour le zoom et l'opacité */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    object-fit: cover; /* Cover the available space */
+    transform: scale(1.2); /* Slight zoom */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
 }
 
+/* Hover effect for menu item images */
 .menu-item:hover img {
-    transform: scale(1.15); /* Augmente légèrement le zoom au survol pour un effet visuel */
-    opacity: 0.6; /* Rend l'image plus claire au survol */
+    transform: scale(1.15); /* Slight zoom on hover */
+    opacity: 0.6; /* Lighten image on hover */
 }
 
+/* Text styles within menu items */
 .menu-item h4 {
-    position: absolute; /* Positionne le texte sur l'image */
-    top: 50%; /* Centre verticalement */
-    left: 50%; /* Centre horizontalement */
-    transform: translate(-50%, -50%); /* Alignement précis au centre */
-    color: #fff; /* Couleur de texte */
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.6); /* Ombre de texte pour améliorer la lisibilité */
-    opacity: 0; /* Rend le texte invisible initialement */
-    transition: opacity 0.3s ease; /* Transition fluide pour l'apparition du texte */
+    position: absolute; /* Position text over image */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Precise centering */
+    color: #fff; /* Text color */
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6); /* Text shadow for readability */
+    opacity: 0; /* Initially invisible */
+    transition: opacity 0.3s ease; /* Smooth transition */
 }
 
-.menu-item:hover img {
-    opacity: 0.6; /* Rend l'image plus claire lors du survol */
-}
-
+/* Hover effect for menu item text */
 .menu-item:hover h4 {
-    opacity: 1; /* Rend le texte visible lors du survol */
+    opacity: 1; /* Make text visible on hover */
 }
 
+/* Active effect for menu items */
 .menu-item:active {
-    transform: scale(0.98); /* Effet de pression pour donner un feedback lors du clic */
+    transform: scale(0.98); /* Pressed effect */
 }
 
-
+/* Container for links */
 .link-container {
-    display: flex;        /* Utilise Flexbox pour faciliter le centrage */
-    justify-content: center; /* Centre horizontalement le contenu à l'intérieur de la balise <a> */
-    align-items: center;  /* Centre verticalement le contenu */
-    text-align: center;   /* Assure que le texte, s'il y en a, est également centré */
-    width: 100%;          /* Assure que la balise <a> prend toute la largeur disponible si nécessaire */
-    height: auto;         /* Hauteur automatique basée sur le contenu, peut être ajustée si nécessaire */
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center; /* Center text */
+    width: 100%; /* Full width */
+    height: auto; /* Automatic height */
 }
 
+/* Logo image styles */
 .img-logo {
-    max-width: 70%;      /* S'assure que l'image ne dépasse pas la largeur de son conteneur */
-    height: auto;         /* Garde les proportions de l'image intactes */
+    max-width: 70%; /* Maximum width */
+    height: auto; /* Maintain aspect ratio */
 }
 
-
+/* Container for the Cesium viewer */
 #cesium-container {
     flex: 4;
-    background-color: #e5e5e5; /* Couleur de fond avant le chargement de Cesium */
+    background-color: #e5e5e5; /* Background color before Cesium loads */
 }
 
-
+/* Container for the profile chart */
 #profile-container {
     position: absolute;
     bottom: 0;
-    width: calc(80% - 32px); /* Calcul de la largeur pour correspondre à 80% de la largeur totale moins le padding de #cesiumContainer */
-    height: calc(100vh / 5);
-    background-color: rgb(255, 255, 255); /* Couleur de fond du graphique */
-    padding-left:20px;
-    padding-top:20px;
-    padding-bottom:20px;
+    width: calc(80% - 32px); /* 80% width minus padding */
+    height: calc(100vh / 5); /* One-fifth of the viewport height */
+    background-color: rgb(255, 255, 255); /* Background color */
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     align-items: center;
     justify-content: center;
     display: flex;
-    left: calc(20% + 32px); /* Positionné juste à droite du #sidebar */
+    left: calc(20% + 32px); /* Positioned to the right of the sidebar */
 }
 
+/* Canvas element styles */
 canvas {
-    max-width: 100%; /* Ensure canvas doesn't exceed parent container width */
-    max-height: 100%; /* Ensure canvas doesn't exceed parent container height */
+    max-width: 100%; /* Full width */
+    max-height: 100%; /* Full height */
 }
 
-
-
+/* Styles for the Cesium overlay */
 .overlay-cesium {
-    position: fixed; /* Utilisez 'fixed' pour garder l'élément en place lors du défilement */
+    position: fixed; /* Fixed position */
     top: 0;
     right: 0;
-    z-index: 1000; /* S'assure que le checkbox reste au-dessus des autres éléments de la page */
+    z-index: 1000; /* Above other elements */
     background-color: white; 
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.7);
 }
-

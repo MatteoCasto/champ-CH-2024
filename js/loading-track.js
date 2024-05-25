@@ -1,4 +1,13 @@
-// Load the GPX file
+/**
+ * Load and display a GPX file in the Cesium viewer.
+ * 
+ * This function loads a GPX file, clamps its data to the ground, and sets the style
+ * of the polyline entities to have a red stroke with a width of 5 pixels. The data source
+ * is then added to the viewer.
+ * 
+ * @param {string} GPX_FILE_XCO - The path to the GPX file to be loaded.
+ */
+
 Cesium.GpxDataSource.load(GPX_FILE_XCO, {
     clampToGround: true
 })
