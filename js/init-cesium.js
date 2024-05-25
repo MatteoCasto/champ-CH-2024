@@ -27,7 +27,7 @@ const viewer = new Cesium.Viewer('cesium-container', {
     sceneModePicker: false,
     geocoder: false,
     baseLayerPicker: false, 
-    navigationHelpButton: false, 
+    navigationHelpButton: true, 
     imageryProvider: false, 
     infoBox: false,
     selectionIndicator: false 
