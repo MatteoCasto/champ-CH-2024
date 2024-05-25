@@ -52,3 +52,7 @@ displayBuildings();
 
 // "start" marker
 addMarker(6.641234466, 46.63941975666666, START_MARKER, 0.07); // TODO eventually with GLTG of an arch
+
+// Localize the navigation help button texts
+viewer.navigationHelpButton.viewModel.showInstructions = false;
+viewer.navigationHelpButton.viewModel.tooltip = 'Aide pour la navigation 3D';
